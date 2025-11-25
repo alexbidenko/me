@@ -15,6 +15,12 @@ export default defineNuxtConfig({
   },
   security: {
     strict: true,
+    headers: {
+      contentSecurityPolicy: {
+        'style-src': [`'self'`, `'unsafe-inline'`],
+        'img-src': [`'self'`, 'data:'],
+      },
+    },
   },
   image: {
     providers: {
@@ -34,14 +40,6 @@ export default defineNuxtConfig({
   },
 
   $development: {
-    security: {
-      headers: {
-        contentSecurityPolicy: {
-          'style-src': [`'self'`, `'unsafe-inline'`],
-          'img-src': [`'self'`, 'data:'],
-        }
-      }
-    },
     image: {
       domains: [origin],
       alias: {
