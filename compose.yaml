@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   ingress:
-    image: ghcr.io/alexbidenko/nginx/ingress:latest
+    image: ghcr.io/alexbidenko/me/ingress:latest
     volumes:
       - nginx-cache:/var/cache/nginx
     deploy:

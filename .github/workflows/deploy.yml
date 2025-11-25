@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/dtmskin/site/application:latest
+          tags: ghcr.io/alexbidenko/me/application:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -54,7 +54,7 @@ jobs:
         with:
           context: ingress
           push: true
-          tags: ghcr.io/dtmskin/site/ingress:latest
+          tags: ghcr.io/alexbidenko/me/ingress:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
