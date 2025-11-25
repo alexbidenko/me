@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  ingress:
+    image: ghcr.io/alexbidenko/nginx/ingress:latest
+    volumes:
+      - nginx-cache:/var/cache/nginx
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
+
+  application:
+    image: ghcr.io/alexbidenko/me/application:latest
+    expose:
+      - 3000
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  nginx-cache:
