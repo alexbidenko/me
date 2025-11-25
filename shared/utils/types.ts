@@ -4,7 +4,7 @@ export enum Category {
   DEVOPS = 'devops',
 }
 
-type PeriodType = [string] | [string, string]
+type PeriodType = [string] | [string, string];
 
 export type ProjectType = {
   id: number;

@@ -41,7 +41,6 @@ export const useValidatedRoute = <Schema extends RouteSchema>(schema: Schema): V
     },
   });
 
-  // возвращаем проксированный route с реактивными params/query
   return new Proxy(route, {
     get(target, prop, receiver) {
       if (prop === 'params') {

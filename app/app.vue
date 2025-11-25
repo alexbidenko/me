@@ -33,6 +33,10 @@ const NAVIGATION_ITEMS: NavigationMenuItem[] = [
       <template #right>
         <UBadge icon="i-lucide-binary" color="warning" size="xl">WIP</UBadge>
       </template>
+
+      <template #body>
+        <UNavigationMenu :items="NAVIGATION_ITEMS" orientation="vertical" />
+      </template>
     </UHeader>
 
     <NuxtPage />
