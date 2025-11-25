@@ -5,6 +5,9 @@ services:
     image: ghcr.io/alexbidenko/me/ingress:latest
     volumes:
       - nginx-cache:/var/cache/nginx
+    networks:
+      - server
+      - internal
     deploy:
       replicas: 1
       update_config:
@@ -15,6 +18,8 @@ services:
 
   application:
     image: ghcr.io/alexbidenko/me/application:latest
+    networks:
+      - internal
     expose:
       - 3000
     deploy:
@@ -27,3 +32,8 @@ services:
 
 volumes:
   nginx-cache:
+
+networks:
+  internal:
+  server:
+    external: true
