@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png';
+import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png?as=meta';
 </script>
 
 <template>
@@ -14,6 +14,6 @@ import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png';
     ]"
     orientation="horizontal"
   >
-    <NuxtImg :src="aiRussiaPreview" class="rounded-xl" />
+    <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" sizes="928" format="webp" class="rounded-xl" />
   </UPageHero>
 </template>

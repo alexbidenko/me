@@ -19,9 +19,10 @@ definePageMeta({
         :src="avatar.src"
         :width="avatar.width"
         :height="avatar.height"
-        sizes="544"
+        sizes="928"
         alt="Аватар Биденко Александра"
         format="webp"
+        class="rounded-xl"
       />
     </UPageHero>
   </UContainer>

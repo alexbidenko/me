@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import asmyPreview from '~/assets/images/show_case/asmy/main.png';
+import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
 </script>
 
 <template>
@@ -13,6 +13,6 @@ import asmyPreview from '~/assets/images/show_case/asmy/main.png';
     ]"
     orientation="horizontal"
   >
-    <NuxtImg :src="asmyPreview" class="rounded-xl" />
+    <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="928" format="webp" class="rounded-xl" />
   </UPageHero>
 </template>

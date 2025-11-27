@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   alias: {
     '#types': '../shared/utils/types',
   },
+  nitro: {
+    compressPublicAssets: true,
+  },
   security: {
     strict: true,
     headers: {

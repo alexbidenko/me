@@ -58,7 +58,7 @@ definePageMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.ASMY } }"
         >
           <template #header>
-            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" class="rounded-sm" />
+            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="576" format="webp" class="rounded-sm" />
           </template>
 
           <template #footer>
@@ -72,7 +72,7 @@ definePageMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.AI_RUSSIAN } }"
         >
           <template #header>
-            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" class="rounded-sm" />
+            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" sizes="576" format="webp" class="rounded-sm" />
           </template>
 
           <template #footer>
