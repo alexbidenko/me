@@ -2,8 +2,18 @@
 import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
 import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png?as=meta';
 
+const TITLE = 'Резюме и навыки – Александр Биденко';
+const DESCRIPTION = 'Обзор ключевых навыков и проектов Александра Биденко. Специализации: Frontend, Backend, DevOps. Познакомьтесь с самыми интересными работами в портфолио.';
+
 definePageMeta({
   name: Route.RESUME,
+});
+
+useSeoMeta({
+  title: TITLE,
+  description: DESCRIPTION,
+  ogTitle: TITLE,
+  ogDescription: DESCRIPTION,
 });
 </script>
 
@@ -58,7 +68,7 @@ definePageMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.ASMY } }"
         >
           <template #header>
-            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="576" format="webp" class="rounded-sm" />
+            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="576" format="webp" class="rounded-sm" alt="Превью панели управления сервером Asmy." />
           </template>
 
           <template #footer>
@@ -72,7 +82,7 @@ definePageMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.AI_RUSSIAN } }"
         >
           <template #header>
-            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" sizes="576" format="webp" class="rounded-sm" />
+            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" sizes="576" format="webp" class="rounded-sm" alt="Превью сайта AI Russia от Mail.ru." />
           </template>
 
           <template #footer>

@@ -1,11 +1,21 @@
 <script lang="ts" setup>
 import zod from "zod";
 
+const TITLE = `Опыт в ${CATEGORY_MAP[route.params.category]} – Александр Биденко`;
+const DESCRIPTION = `Портфолио проектов и достижений Александра Биденко в области ${CATEGORY_MAP[route.params.category]}. Ознакомьтесь с опытом работы, используемыми технологиями и выполненными задачами.`;
+
 const route = useValidatedRoute({ params: zod.object({ category: zod.enum(Category) }) });
 
 const { data: projects } = await useFetch('/api/projects', { query: { category: route.params.category } });
 
 assertNotEmpty(projects);
+
+useSeoMeta({
+  title: TITLE,
+  description: DESCRIPTION,
+  ogTitle: TITLE,
+  ogDescription: DESCRIPTION,
+});
 
 definePageMeta({
   name: Route.RESUME_VIEW,

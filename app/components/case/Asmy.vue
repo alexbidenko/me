@@ -13,6 +13,6 @@ import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
     ]"
     orientation="horizontal"
   >
-    <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="928" format="webp" class="rounded-xl" />
+    <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="928" format="webp" class="rounded-xl" alt="Интерфейс панели управления сервером Asmy, показывающий дашборд с контейнерами и настройками." />
   </UPageHero>
 </template>
