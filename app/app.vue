@@ -19,6 +19,10 @@ const NAVIGATION_ITEMS: NavigationMenuItem[] = [
     to: { name: Route.RESUME_VIEW, params: { category: Category.DEVOPS } },
   },
 ];
+
+useSeoMeta({
+  title: 'Резюме Александра Биденко',
+});
 </script>
 
 <template>

@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
     "format": "oxfmt ."
   },
   "dependencies": {
@@ -25,7 +26,8 @@
   },
   "devDependencies": {
     "@types/node": "24.10.1",
-    "oxfmt": "0.15.0"
+    "oxfmt": "0.15.0",
+    "vue-tsc": "3.1.5"
   },
-  "packageManager": "pnpm@10.22.0"
+  "packageManager": "pnpm@10.23.0"
 }

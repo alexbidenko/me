@@ -1,6 +1,6 @@
 FROM node:25.2.0-alpine AS base
 
-RUN npm install --global --no-update-notifier pnpm@10.22.0
+RUN npm install --global --no-update-notifier pnpm@10.23.0
 
 FROM base AS install
 

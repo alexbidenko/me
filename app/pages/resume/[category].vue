@@ -24,7 +24,9 @@ definePageMeta({
           </template>
 
           {{ project.description }}
-          <UBadge size="lg" color="neutral" variant="soft" class="block w-fit my-3">{{ project.role }}</UBadge>
+          <div class="flex flex-wrap gap-3">
+            <UBadge v-for="role in project.roles" :key="role" size="lg" color="neutral" variant="soft" class="block w-fit my-3">{{ ROLE_MAP[role] }}</UBadge>
+          </div>
           <ul class="list-inside list-disc">
             <li v-for="item in project.tasks" :key="item">{{ item }}</li>
           </ul>
@@ -32,7 +34,7 @@ definePageMeta({
           <template #footer>
             <div class="flex flex-wrap gap-3">
               <UBadge v-for="item in project.stack" :key="item" color="neutral" variant="outline">
-                {{ item }}
+                {{ TECHNOLOGY_MAP[item] }}
               </UBadge>
             </div>
           </template>

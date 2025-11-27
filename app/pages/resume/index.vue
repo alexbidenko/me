@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
+import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png?as=meta';
+
 definePageMeta({
   name: Route.RESUME,
 });
@@ -6,7 +9,7 @@ definePageMeta({
 
 <template>
   <UContainer as="main">
-    <UPageHeader title="Вас интересует" />
+    <UPageHeader title="Навыки и проекты" />
     <UPageBody>
       <UPageGrid>
         <UPageCard
@@ -36,6 +39,42 @@ definePageMeta({
           description="Я всегда стремился к профессиональной разработки от нуля до финального продукта. И этот путь невозможен без DevOps. На многих проектах мое видение картины целиком как специалист различных областей неоднократно приносило огромную полезность."
           :to="{ name: Route.RESUME_VIEW, params: { category: Category.DEVOPS } }"
         >
+          <template #footer>
+            <UButton trailing-icon="i-lucide-arrow-up-right" variant="soft" class="flex items-center gap-1">
+              Подробнее
+            </UButton>
+          </template>
+        </UPageCard>
+      </UPageGrid>
+
+      <UPageHeader>
+        <h2 class="text-2xl sm:text-3xl text-pretty font-bold text-highlighted">
+          Самое интересное
+        </h2>
+      </UPageHeader>
+      <UPageGrid>
+        <UPageCard
+          title="Панель администрирования серверов Asmy"
+          :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.ASMY } }"
+        >
+          <template #header>
+            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" class="rounded-sm" />
+          </template>
+
+          <template #footer>
+            <UButton trailing-icon="i-lucide-arrow-up-right" variant="soft" class="flex items-center gap-1">
+              Подробнее
+            </UButton>
+          </template>
+        </UPageCard>
+        <UPageCard
+          title="Сайт премии AI компаний от Mail.ru"
+          :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.AI_RUSSIAN } }"
+        >
+          <template #header>
+            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" class="rounded-sm" />
+          </template>
+
           <template #footer>
             <UButton trailing-icon="i-lucide-arrow-up-right" variant="soft" class="flex items-center gap-1">
               Подробнее
