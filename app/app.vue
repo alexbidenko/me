@@ -39,6 +39,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <Html lang="ru" />
   <UApp>
     <UHeader>
       <template #title>
