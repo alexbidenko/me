@@ -19,7 +19,7 @@ useSeoMeta({
 
 definePageMeta({
   name: Route.RESUME_VIEW,
-})
+});
 </script>
 
 <template>

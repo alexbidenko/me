@@ -17,7 +17,7 @@ export enum Role {
 
 export enum ShowCase {
   ASMY = 'asmy',
-  AI_RUSSIAN = 'ai_russian',
+  AI_RUSSIAN = 'ai-russian',
 }
 
 export enum Technology {

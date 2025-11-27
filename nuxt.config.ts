@@ -15,6 +15,14 @@ export default defineNuxtConfig({
   },
   nitro: {
     compressPublicAssets: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml'],
+    },
+  },
+  routeRules: {
+    '/**': { prerender: true },
+    '/_ipx/**': { prerender: false },
   },
   security: {
     strict: true,
@@ -34,7 +42,8 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  compatibilityDate: '2025-07-15',
+  experimental: { inlineRouteRules: true },
+  compatibilityDate: '2025-11-01',
 
   $production: {
     image: {
