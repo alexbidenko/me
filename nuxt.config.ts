@@ -17,10 +17,11 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml'],
+      routes: ['/sitemap.xml', '/robots.txt'],
     },
   },
   routeRules: {
+    '/': { prerender: true },
     '/**': { prerender: true },
     '/_ipx/**': { prerender: false },
   },
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
         'img-src': [`'self'`, 'data:'],
       },
     },
+  },
+  site: {
+    url: 'https://me.asmy.pro',
   },
   image: {
     providers: {
