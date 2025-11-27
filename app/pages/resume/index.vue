@@ -18,13 +18,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer as="main">
+  <UContainer>
     <UPageHeader title="Навыки и проекты" />
     <UPageBody>
       <UPageGrid>
         <UPageCard
           :title="`${CATEGORY_MAP[Category.FRONTEND]} разработчик`"
-          description="Основная моя специализация, но не единственная. Я очень много работал с основной тройкой экосистем: Vue, React, Angular. Работал над огромным множеством проектов разной сложности. Получил опыт с большим количеством различных библиотек."
+          description="Основная моя специализация, но&nbsp;не&nbsp;единственная. Я&nbsp;очень много работал с&nbsp;основной тройкой экосистем: Vue, React, Angular. Работал над огромным множеством проектов разной сложности. Получил опыт с&nbsp;большим количеством различных библиотек."
           :to="{ name: Route.RESUME_VIEW, params: { category: Category.FRONTEND } }"
         >
           <template #footer>
@@ -35,7 +35,7 @@ useSeoMeta({
         </UPageCard>
         <UPageCard
           :title="`${CATEGORY_MAP[Category.BACKEND]} разработчик`"
-          description="С первых дней своей работы я развивался как FullStack разработчик, потому Backend является неотъемлемой частью меня. Nest для быстрой и качественной разработки. Golang где важна каждая миллисекунда производительности. Laravel для простоты поддержки."
+          description="С&nbsp;первых дней своей работы я&nbsp;развивался как FullStack разработчик, потому Backend является неотъемлемой частью меня. Nest для быстрой и&nbsp;качественной разработки. Golang где важна каждая миллисекунда производительности. Laravel для простоты поддержки."
           :to="{ name: Route.RESUME_VIEW, params: { category: Category.BACKEND } }"
         >
           <template #footer>
@@ -46,7 +46,7 @@ useSeoMeta({
         </UPageCard>
         <UPageCard
           :title="`${CATEGORY_MAP[Category.DEVOPS]} инженер`"
-          description="Я всегда стремился к профессиональной разработки от нуля до финального продукта. И этот путь невозможен без DevOps. На многих проектах мое видение картины целиком как специалист различных областей неоднократно приносило огромную полезность."
+          description="Я&nbsp;всегда стремился к&nbsp;профессиональной разработки от&nbsp;нуля до&nbsp;финального продукта. И&nbsp;этот путь невозможен без DevOps. На&nbsp;многих проектах мое видение картины целиком как специалист различных областей неоднократно приносило огромную полезность."
           :to="{ name: Route.RESUME_VIEW, params: { category: Category.DEVOPS } }"
         >
           <template #footer>

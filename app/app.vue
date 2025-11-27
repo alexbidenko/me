@@ -48,16 +48,51 @@ useSeoMeta({
 
       <UNavigationMenu :items="NAVIGATION_ITEMS" />
 
-      <template #right>
-        <UBadge icon="i-lucide-binary" color="warning" size="xl">WIP</UBadge>
-      </template>
-
       <template #body>
         <UNavigationMenu :items="NAVIGATION_ITEMS" orientation="vertical" />
       </template>
     </UHeader>
 
-    <NuxtPage />
+    <UMain>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </UMain>
+
+    <UFooter>
+      <template #left>
+        <p class="text-muted text-sm">
+          Copyright © {{ new Date().getFullYear() }}
+        </p>
+      </template>
+
+      <template #right>
+        <UButton
+          icon="i-simple-icons-telegram"
+          color="neutral"
+          variant="ghost"
+          to="https://t.me/alexbidenko"
+          target="_blank"
+          aria-label="Telegram"
+        />
+        <UButton
+          icon="i-simple-icons-x"
+          color="neutral"
+          variant="ghost"
+          to="https://x.com/alexbidenko"
+          target="_blank"
+          aria-label="X"
+        />
+        <UButton
+          icon="i-simple-icons-github"
+          color="neutral"
+          variant="ghost"
+          to="https://github.com/alexbidenko"
+          target="_blank"
+          aria-label="GitHub"
+        />
+      </template>
+    </UFooter>
 
     <NuxtLoadingIndicator color="var(--ui-primary)" />
   </UApp>

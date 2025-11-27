@@ -23,7 +23,7 @@ definePageMeta({
 </script>
 
 <template>
-  <UContainer as="main">
+  <UContainer>
     <UPageHeader :title="`Резюме категории ${CATEGORY_MAP[route.params.category]}`" />
 
     <UPageBody>

@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-  <UContainer as="main">
+  <UContainer>
     <UPageHero
       title="Александр Биденко"
       headline="Senior Full-Stack developer and DevOps engineer"
@@ -15,6 +15,16 @@ definePageMeta({
       :links="[{ label: 'Резюме', to: { name: Route.RESUME }, trailingIcon: 'i-lucide-arrow-right' }]"
       orientation="horizontal"
     >
+      <template #body>
+        <div class="flex flex-wrap gap-3">
+          <UBadge color="secondary" variant="soft">8+ лет опыта</UBadge>
+          <UBadge color="secondary" variant="soft">50+ завершенных проектов</UBadge>
+          <UBadge color="secondary" variant="soft">Высшее образование</UBadge>
+          <UBadge color="secondary" variant="soft">English B2</UBadge>
+          <UBadge color="secondary" variant="soft">Новороссийск</UBadge>
+        </div>
+      </template>
+
       <NuxtImg
         :src="avatar.src"
         :width="avatar.width"
