@@ -32,6 +32,7 @@ definePageMeta({
         sizes="928"
         alt="Аватар Биденко Александра"
         format="webp"
+        fetchpriority=high
         class="rounded-xl"
       />
     </UPageHero>

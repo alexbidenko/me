@@ -5,7 +5,7 @@ const origin = `http://localhost:${process.env.PORT || 3000}`;
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['nuxt-security', '@nuxt/image', '@nuxt/ui'],
+  modules: ['nuxt-security', '@nuxt/image', '@nuxt/ui', '@nuxtjs/seo'],
   vite: {
     plugins: [tailwindcss(), imagetools()],
   },

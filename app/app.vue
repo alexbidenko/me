@@ -35,11 +35,18 @@ useSeoMeta({
   ogImage: ogImage.url,
   ogImageWidth: OG_IMAGE_WIDTH,
   ogImageHeight: Math.round(OG_IMAGE_WIDTH * (avatar.height / avatar.width)),
+  twitterCard: 'summary',
 });
 </script>
 
 <template>
   <Html lang="ru" />
+  <Head>
+    <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  </Head>
+
   <UApp>
     <UHeader>
       <template #title>
