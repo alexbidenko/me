@@ -29,6 +29,8 @@ export default defineNuxtConfig({
     strict: true,
     ssg: {
       meta: false,
+      hashScripts: false,
+      hashStyles: false,
     },
     headers: {
       contentSecurityPolicy: {
