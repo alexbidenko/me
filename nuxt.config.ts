@@ -27,7 +27,9 @@ export default defineNuxtConfig({
   },
   security: {
     strict: true,
-    ssg: false,
+    ssg: {
+      meta: false,
+    },
     headers: {
       contentSecurityPolicy: {
         'img-src': [`'self'`, 'data:'],
