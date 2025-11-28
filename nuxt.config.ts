@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     },
     headers: {
       contentSecurityPolicy: {
+        'style-src': [`'self'`, `'unsafe-inline'`],
         'img-src': [`'self'`, 'data:'],
       },
     },
@@ -59,13 +60,6 @@ export default defineNuxtConfig({
   },
 
   $development: {
-    security: {
-      headers: {
-        contentSecurityPolicy: {
-          'style-src': [`'self'`, `'unsafe-inline'`],
-        },
-      },
-    },
     image: {
       domains: [DEV_ORIGIN],
       alias: {
