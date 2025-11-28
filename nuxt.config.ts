@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   },
   security: {
     strict: true,
+    ssg: false,
     headers: {
       contentSecurityPolicy: {
         'img-src': [`'self'`, 'data:'],
@@ -49,13 +50,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-11-01',
 
   $production: {
-    security: {
-      headers: {
-        contentSecurityPolicy: {
-          'style-src': [`'self'`, `'nonce-{{nonce}}'`],
-        },
-      },
-    },
     image: {
       ipx: { maxAge: 31536000 },
     },
