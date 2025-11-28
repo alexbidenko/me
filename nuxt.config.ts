@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     security: {
       headers: {
         contentSecurityPolicy: {
-          'style-src': [`'self'`, `'unsafe-hashes'`],
+          'style-src': [`'self'`, `'unsafe-inline'`, `'unsafe-hashes'`],
         },
       },
     },
