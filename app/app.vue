@@ -9,23 +9,19 @@ const NAVIGATION_ITEMS: NavigationMenuItem[] = [
     label: 'Резюме',
     to: { name: Route.RESUME },
   },
-  {
-    label: 'Frontend',
-    to: { name: Route.RESUME_VIEW, params: { category: Category.FRONTEND } },
-  },
-  {
-    label: 'Backend',
-    to: { name: Route.RESUME_VIEW, params: { category: Category.BACKEND } },
-  },
-  {
-    label: 'DevOps',
-    to: { name: Route.RESUME_VIEW, params: { category: Category.DEVOPS } },
-  },
+  ...Object.entries(CATEGORY_MAP).map(([key, value]) => ({
+    label: value,
+    to: { name: Route.RESUME_VIEW, params: { category: key } },
+  })),
 ];
 
+const route = useRoute();
+const router = useRouter();
 const img = useImage();
 
 const ogImage = img.getImage(avatar.src, { modifiers: { width: OG_IMAGE_WIDTH }, sizes: `${OG_IMAGE_WIDTH}` });
+
+const isContactModalVisible = computed(() => route.hash === RouteHash.CONTACT);
 
 useSeoMeta({
   title: 'Александр Биденко – Senior Full-Stack разработчик, DevOps и архитектор',
@@ -54,6 +50,11 @@ useSeoMeta({
       </template>
 
       <UNavigationMenu :items="NAVIGATION_ITEMS" />
+
+      <template #right>
+        <UButton :to="{ hash: RouteHash.CONTACT }" color="neutral" variant="ghost" icon="i-lucide-message-circle-more" />
+        <UColorModeButton />
+      </template>
 
       <template #body>
         <UNavigationMenu :items="NAVIGATION_ITEMS" orientation="vertical" />
@@ -100,6 +101,30 @@ useSeoMeta({
         />
       </template>
     </UFooter>
+
+    <UModal
+      @update:open="router.push({ hash: undefined })"
+      :open="isContactModalVisible"
+      title="Связаться со мной"
+    >
+      <template #body>
+        <div class="grid grid-cols-2 gap-3">
+          <UPageCard
+            icon="i-simple-icons-telegram"
+            title="Telegram"
+            to="https://t.me/alexbidenko"
+            target="_blank"
+            spotlight
+          />
+          <UPageCard
+            icon="i-simple-icons-gmail"
+            title="E-Mail"
+            to="mailto:alexbidenko1998@gmail.com"
+            spotlight
+          />
+        </div>
+      </template>
+    </UModal>
 
     <NuxtLoadingIndicator color="var(--ui-primary)" />
   </UApp>

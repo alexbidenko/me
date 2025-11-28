@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite';
 import { imagetools } from 'vite-imagetools';
 
-const origin = `http://localhost:${process.env.PORT || 3000}`;
+const DEV_ORIGIN = `http://localhost:${process.env.PORT || 3000}`;
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -57,9 +57,9 @@ export default defineNuxtConfig({
 
   $development: {
     image: {
-      domains: [origin],
+      domains: [DEV_ORIGIN],
       alias: {
-        _nuxt: `${origin}/_nuxt`,
+        _nuxt: `${DEV_ORIGIN}/_nuxt`,
       },
     },
   },

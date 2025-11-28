@@ -36,7 +36,5 @@ definePageMeta({
 </script>
 
 <template>
-  <UContainer>
-    <component :is="CaseComponent" />
-  </UContainer>
+  <component :is="CaseComponent" />
 </template>

@@ -68,7 +68,15 @@ useSeoMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.ASMY } }"
         >
           <template #header>
-            <NuxtImg :src="asmyPreview.src" :width="asmyPreview.width" :height="asmyPreview.height" sizes="576" format="webp" class="rounded-sm" alt="Превью панели управления сервером Asmy." />
+            <NuxtImg
+              :src="asmyPreview.src"
+              :width="asmyPreview.width"
+              :height="asmyPreview.height"
+              :sizes="IMAGE_SIZES.CARD"
+              format="webp"
+              class="rounded-sm"
+              alt="Превью панели управления сервером Asmy."
+            />
           </template>
 
           <template #footer>
@@ -82,7 +90,15 @@ useSeoMeta({
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.AI_RUSSIAN } }"
         >
           <template #header>
-            <NuxtImg :src="aiRussiaPreview.src" :width="aiRussiaPreview.width" :height="aiRussiaPreview.height" sizes="576" format="webp" class="rounded-sm" alt="Превью сайта AI Russia от Mail.ru." />
+            <NuxtImg
+              :src="aiRussiaPreview.src"
+              :width="aiRussiaPreview.width"
+              :height="aiRussiaPreview.height"
+              :sizes="IMAGE_SIZES.CARD"
+              format="webp"
+              class="rounded-sm"
+              alt="Превью сайта AI Russia от Mail.ru."
+            />
           </template>
 
           <template #footer>
