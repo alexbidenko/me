@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import zod from "zod";
-
 const route = useValidatedRoute({ params: zod.object({ category: zod.enum(Category) }) });
 
 const TITLE = `Опыт в ${CATEGORY_MAP[route.params.category]} – Александр Биденко`;

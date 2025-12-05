@@ -34,6 +34,7 @@ export enum Technology {
   GSAP = 'gsap',
   GIN = 'gin',
   GITLAB_CI = 'gitlab_ci',
+  GITHUB_ACTIONS = 'github_actions',
   GO = 'go',
   GORM = 'gorm',
   GRAPH_QL = 'graph_ql',

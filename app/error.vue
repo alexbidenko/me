@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type {NuxtError} from "#app";
 import type {EmptyProps} from "#ui/types";
+import type {NuxtError} from "#app";
 
 const props = defineProps<{
   error: NuxtError;
 }>();
 
 const data = computed<Required<Pick<EmptyProps, 'title' | 'description' | 'icon'>>>(() => {
-  if (props.error.statusCode === 404) {
+  if (props.error.statusCode === StatusCode.NOT_FOUND) {
     return {
       title: 'Ой, кажется вы заблудились...',
       description: 'Но ничего, вернуться назад никогда не поздно!',

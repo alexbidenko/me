@@ -6,10 +6,6 @@ export default defineProvider(() => {
 
   return {
     ...ipx,
-    getImage: (src, ...args) => {
-      if (/^https?:\/\//.test(src)) src = new URL(src).pathname;
-
-      return ipx.getImage(src, ...args);
-    },
+    getImage: (src, ...args) => ipx.getImage(/^https?:\/\//.test(src) ? new URL(src).pathname : src, ...args),
   };
 });

@@ -1,6 +1,6 @@
-FROM node:25.2.0-alpine AS base
+FROM node:25.2.1-alpine AS base
 
-RUN npm install --global --no-update-notifier pnpm@10.23.0
+RUN npm install --global --no-update-notifier pnpm@10.24.0
 
 FROM base AS install
 
@@ -18,7 +18,7 @@ COPY . .
 
 RUN pnpm build
 
-FROM node:25.2.0-alpine
+FROM node:25.2.1-alpine
 
 WORKDIR /app
 

@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "node", "promise", "vue"],
+  "categories": {
+    "correctness": "error",
+    "nursery": "error",
+    "pedantic": "error",
+    "perf": "error",
+    "restriction": "error",
+    "style": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    "no-magic-numbers": ["error", { "ignore": [1], "ignoreEnums": true }],
+    "vue/define-props-destructuring": ["error", { "destructure": "never" }],
+    "typescript/consistent-type-definitions": ["error", "type"],
+
+    "no-undef": "off",
+    "no-ternary": "off",
+    "no-async-await": "off",
+    "no-optional-chaining": "off",
+    "no-rest-spread-properties": "off",
+    "switch-case-braces": "off",
+    "curly": "off",
+    "sort-keys": "off",
+    "explicit-function-return-type": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.config.ts", "server/api/**"],
+      "rules": {
+        "no-default-export": "off"
+      }
+    },
+    {
+      "files": ["server/utils/*.data.*"],
+      "rules": {
+        "max-lines": "off"
+      }
+    },
+    {
+      "files": ["app/components/**"],
+      "rules": {
+        "filename-case": "off"
+      }
+    },
+    {
+      "files": ["**/utils/**", "app/composables/**"],
+      "rules": {
+        "no-named-export": "off",
+        "prefer-default-export": "off",
+        "group-exports": "off",
+        "exports-last": "off"
+      }
+    },
+    {
+      "files": ["**/utils/asserts.ts"],
+      "rules": {
+        "no-undefined": "off"
+      }
+    },
+    {
+      "files": ["**/*.d.ts", "**/*.vue"],
+      "rules": {
+        "import/unambiguous": "off"
+      }
+    }
+  ]
+}

@@ -1,11 +1,13 @@
-import tailwindcss from '@tailwindcss/vite';
 import { imagetools } from 'vite-imagetools';
+import tailwindcss from '@tailwindcss/vite';
 
-const DEV_ORIGIN = `http://localhost:${process.env.PORT || 3000}`;
+const DEFAULT_PORT = 3000;
+const MAX_AGE_YEAR = 31_536_000;
+const DEV_ORIGIN = `http://localhost:${import.meta.env.PORT || DEFAULT_PORT}`;
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['nuxt-security', '@nuxt/image', '@nuxt/ui', '@nuxtjs/seo'],
+  modules: ['nuxt-security', '@nuxt/image', '@nuxt/ui', '@nuxtjs/seo', '@nuxt/hints'],
   vite: {
     plugins: [tailwindcss(), imagetools()],
   },
@@ -45,7 +47,7 @@ export default defineNuxtConfig({
     providers: {
       ipx: {
         name: 'ipx',
-        provider: '~/image-provider.ts',
+        provider: '~/image-provider.config.ts',
       },
     },
   },
@@ -55,11 +57,18 @@ export default defineNuxtConfig({
 
   $production: {
     image: {
-      ipx: { maxAge: 31536000 },
+      ipx: { maxAge: MAX_AGE_YEAR },
     },
   },
 
   $development: {
+    security: {
+      headers: {
+        contentSecurityPolicy: {
+          'worker-src': [`'self'`, 'blob:'],
+        },
+      },
+    },
     image: {
       domains: [DEV_ORIGIN],
       alias: {

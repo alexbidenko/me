@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import zod from "zod";
-import { LazyCaseAsmy, LazyCaseAiRussia } from '#components';
+import { LazyCaseAiRussia, LazyCaseAsmy } from '#components';
 
 const SEO_MAP: Record<ShowCase, { title: string; description: string }> = {
   [ShowCase.ASMY]: {

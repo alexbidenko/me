@@ -1,4 +1,4 @@
-useNodeVersion: 25.2.0
+useNodeVersion: 25.2.1
 
 onlyBuiltDependencies:
   - '@parcel/watcher'

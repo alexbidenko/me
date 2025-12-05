@@ -1,14 +1,14 @@
 import type { ZodType, infer as zInfer } from 'zod';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
-interface RouteSchema {
+type RouteSchema = {
   params?: ZodType;
   query?: ZodType;
-}
+};
 
 type ValidatedRoute<Schema extends RouteSchema> = Omit<RouteLocationNormalizedLoaded, 'params' | 'query'> & {
-  params: Schema['params'] extends ZodType ? zInfer<Schema['params']> : {};
-  query: Schema['query'] extends ZodType ? zInfer<Schema['query']> : {};
+  params: Schema['params'] extends ZodType ? zInfer<Schema['params']> : object;
+  query: Schema['query'] extends ZodType ? zInfer<Schema['query']> : object;
 };
 
 export const useValidatedRoute = <Schema extends RouteSchema>(schema: Schema): ValidatedRoute<Schema> => {

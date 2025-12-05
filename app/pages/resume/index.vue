@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
 import aiRussiaPreview from '~/assets/images/show_case/ai_russia/main.png?as=meta';
+import asmyPreview from '~/assets/images/show_case/asmy/main.png?as=meta';
 
 const TITLE = 'Резюме и навыки – Александр Биденко';
 const DESCRIPTION = 'Обзор ключевых навыков и проектов Александра Биденко. Специализации: Frontend, Backend, DevOps. Познакомьтесь с самыми интересными работами в портфолио.';
@@ -19,9 +19,23 @@ useSeoMeta({
 
 <template>
   <UContainer>
-    <UPageHeader title="Навыки и проекты" />
     <UPageBody>
-      <UPageGrid>
+      <UPageHeader title="Навыки и проекты" />
+      <section class="flex flex-col items-start gap-4">
+        <div v-for="(group, key) in TECHNOLOGY_GROUP" :key="key" class="flex flex-col items-start gap-3">
+          <UBadge size="lg">{{ CATEGORY_MAP[key] }}</UBadge>
+          <div class="flex flex-wrap gap-2">
+            <UBadge v-for="(item, index) in group" :key="index" variant="subtle">{{ TECHNOLOGY_MAP[item] }}</UBadge>
+          </div>
+        </div>
+      </section>
+
+      <UPageHeader>
+        <h2 class="text-2xl sm:text-3xl text-pretty font-bold text-highlighted">
+          Проекты по категориям
+        </h2>
+      </UPageHeader>
+      <UPageGrid as="section">
         <UPageCard
           :title="`${CATEGORY_MAP[Category.FRONTEND]} разработчик`"
           description="Основная моя специализация, но&nbsp;не&nbsp;единственная. Я&nbsp;очень много работал с&nbsp;основной тройкой экосистем: Vue, React, Angular. Работал над огромным множеством проектов разной сложности. Получил опыт с&nbsp;большим количеством различных библиотек."
@@ -62,7 +76,7 @@ useSeoMeta({
           Самое интересное
         </h2>
       </UPageHeader>
-      <UPageGrid>
+      <UPageGrid as="section">
         <UPageCard
           title="Панель администрирования серверов Asmy"
           :to="{ name: Route.PROJECT_VIEW, params: { slug: ShowCase.ASMY } }"

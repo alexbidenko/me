@@ -6,3 +6,7 @@ export const assertNotEmpty = <Type>(
     throw error();
   }
 };
+
+export type SameUnion<Target, Source> = Exclude<Source, Target> extends never ? true : false;
+
+export type AssertTrue<Type extends true> = Type;
