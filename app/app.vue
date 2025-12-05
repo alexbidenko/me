@@ -71,7 +71,7 @@ useSeoMeta({
       </NuxtLayout>
     </UMain>
 
-    <UFooter>
+    <LazyUFooter hydrate-never>
       <template #left>
         <p class="text-muted text-sm">
           Copyright © {{ new Date().getFullYear() }}
@@ -104,9 +104,9 @@ useSeoMeta({
           aria-label="GitHub"
         />
       </template>
-    </UFooter>
+    </LazyUFooter>
 
-    <UModal
+    <LazyUModal
       v-model:open="isContactModalVisible"
       title="Связаться со мной"
     >
@@ -127,7 +127,7 @@ useSeoMeta({
           />
         </div>
       </template>
-    </UModal>
+    </LazyUModal>
 
     <NuxtLoadingIndicator color="var(--ui-primary)" />
   </UApp>

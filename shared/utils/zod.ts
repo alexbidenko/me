@@ -1,3 +1,3 @@
-import zod from 'zod';
+import { z } from 'zod/mini';
 
-export { zod };
+export { z as zod };
