@@ -27,6 +27,15 @@ export default defineNuxtConfig({
     '/**': { prerender: true },
     '/_ipx/**': { prerender: false },
   },
+  hooks: {
+    'build:manifest': (manifest) => {
+      for (const meta of Object.values(manifest)) {
+        if (!/(.+).(webp|png|jpe?g)$/.test(meta.file)) {
+          meta.prefetch = false;
+        }
+      }
+    },
+  },
   security: {
     strict: true,
     ssg: {

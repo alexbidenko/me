@@ -18,7 +18,7 @@ export const useValidatedRoute = <Schema extends RouteSchema>(schema: Schema): V
     try {
       return schema.params?.parse(route.params) ?? {};
     } catch {
-      throw createError({ statusCode: 404 });
+      throw createError({ statusCode: StatusCode.NOT_FOUND });
     }
   });
 
@@ -26,7 +26,7 @@ export const useValidatedRoute = <Schema extends RouteSchema>(schema: Schema): V
     try {
       return schema.query?.parse(route.query) ?? {};
     } catch {
-      throw createError({ statusCode: 404 });
+      throw createError({ statusCode: StatusCode.NOT_FOUND });
     }
   });
 
