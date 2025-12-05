@@ -30,9 +30,7 @@ export default defineNuxtConfig({
   hooks: {
     'build:manifest': (manifest) => {
       for (const meta of Object.values(manifest)) {
-        if (!/(.+).(webp|png|jpe?g)$/.test(meta.file)) {
-          meta.prefetch = false;
-        }
+        meta.assets = meta.assets?.filter((file) => !/(.+).(webp|png|jpe?g)$/.test(file))
       }
     },
   },
@@ -59,6 +57,9 @@ export default defineNuxtConfig({
         provider: '~/image-provider.config.ts',
       },
     },
+  },
+  linkChecker: {
+    skipInspections: ['missing-hash'],
   },
   devtools: { enabled: true },
   experimental: { inlineRouteRules: true },

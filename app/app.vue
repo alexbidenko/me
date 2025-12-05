@@ -15,13 +15,11 @@ const NAVIGATION_ITEMS: NavigationMenuItem[] = [
   })),
 ];
 
-const route = useRoute();
-const router = useRouter();
-const img = useImage();
+const image = useImage();
 
-const ogImage = img.getImage(avatar.src, { modifiers: { width: OG_IMAGE_WIDTH }, sizes: `${OG_IMAGE_WIDTH}` });
+const ogImage = image.getImage(avatar.src, { modifiers: { width: OG_IMAGE_WIDTH }, sizes: `${OG_IMAGE_WIDTH}` });
 
-const isContactModalVisible = computed(() => route.hash === RouteHash.CONTACT);
+const isContactModalVisible = useModalVisible(RouteHash.CONTACT);
 
 useSeoMeta({
   title: 'Александр Биденко – Senior Full-Stack разработчик, DevOps и архитектор',
@@ -52,7 +50,13 @@ useSeoMeta({
       <UNavigationMenu :items="NAVIGATION_ITEMS" />
 
       <template #right>
-        <UButton :to="{ hash: RouteHash.CONTACT }" color="neutral" variant="ghost" icon="i-lucide-message-circle-more" />
+        <UButton
+          :to="{ hash: RouteHash.CONTACT }"
+          color="neutral"
+          variant="ghost"
+          icon="i-lucide-message-circle-more"
+          aria-label="Способы связи"
+        />
         <UColorModeButton />
       </template>
 
@@ -103,8 +107,7 @@ useSeoMeta({
     </UFooter>
 
     <UModal
-      @update:open="router.push({ hash: undefined })"
-      :open="isContactModalVisible"
+      v-model:open="isContactModalVisible"
       title="Связаться со мной"
     >
       <template #body>

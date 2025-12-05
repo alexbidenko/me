@@ -45,7 +45,13 @@
       }
     },
     {
-      "files": ["**/utils/**", "app/composables/**"],
+      "files": ["app/composables/**"],
+      "rules": {
+        "typescript/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "files": ["app/composables/**", "**/utils/**"],
       "rules": {
         "no-named-export": "off",
         "prefer-default-export": "off",
@@ -54,7 +60,7 @@
       }
     },
     {
-      "files": ["**/utils/asserts.ts"],
+      "files": ["app/composables/**", "**/utils/asserts.ts"],
       "rules": {
         "no-undefined": "off"
       }
